@@ -11,15 +11,15 @@ terraform {
 
 provider "aws" {
   region     = "us-east-1"
-  access_key = "AKIAZQ3DSSCLF7L4FU52"
-  secret_key = "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"
+  access_key = "AKIAZQ3DSSCLO4R5Y37J"
+  secret_key = "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"
 }
 
-resource "aws_instance" "my_first_server" {
-  ami           = "ami-07d9b9ddc6cd8dd30"
-  instance_type = "t2.micro"
-
-}
+#resource "aws_instance" "my_second_server" {
+#  ami           = "ami-07d9b9ddc6cd8dd30"
+#  instance_type = "t2.micro"
+#
+#}
 
 data "aws_instances" "existing_instances" {
   instance_tags = {
@@ -208,7 +208,7 @@ resource "aws_instance" "web-ins" {
 sudo apt update -y
 sudo apt install apache2 -y
 sudo systemctl start apache2
-sudo bash -c "echo your very first web server > /var/www/html/index.html"
+sudo bash -c "echo your very first web server, charlie > /var/www/html/index.html"
 EOF
   tags = {
     Name = "web-server"
